@@ -23,3 +23,19 @@ docs = [
   "sphinx==4.2.0",
   "sphinx-rtd-theme==1.0.0",
 ]
+
+[tool.bumpver]
+current_version = "v0.2.3"
+version_pattern = "vMAJOR.MINOR.PATCH[PYTAGNUM]"
+commit_message = "Bump version {old_version} -> {new_version}."
+commit = true
+tag = true
+push = true
+
+[tool.bumpver.file_patterns]
+"mypackage/__init__.py" = [
+    '__version__ = "{pep440_version}"',
+]
+"pyproject.toml" = [
+    'version = "{pep440_version}"',
+]
